@@ -1,0 +1,15 @@
+erDiagram
+    MON_HOC ||--o{ MUC_TIEU_HOC_TAP : "co"
+
+    MON_HOC {
+        string MaMonHoc PK
+        string TenMon
+        int SoTinChi
+    }
+
+    MUC_TIEU_HOC_TAP {
+        string MaMucTieu PK
+        string NoiDung
+        datetime ThoiGianDatMucTieu
+        string MaMonHoc FK
+    }

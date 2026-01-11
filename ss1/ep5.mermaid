@@ -1,0 +1,36 @@
+erDiagram
+    MON_HOC ||--o{ MUC_TIEU_HOC_TAP : "co"
+    MON_HOC ||--o{ LICH_ON_TAP : "co"
+    MON_HOC ||--o{ TAI_LIEU_ON_TAP : "so huu"
+    
+    LICH_ON_TAP }o--o{ TAI_LIEU_ON_TAP : "su dung"
+
+    MON_HOC {
+        string MaMon PK
+        string TenMon
+        int SoTinChi
+    }
+
+    MUC_TIEU_HOC_TAP {
+        string MaMucTieu PK
+        string NoiDung
+        datetime ThoiGianDat
+        string MaMon FK
+    }
+
+    LICH_ON_TAP {
+        string MaLich PK
+        date NgayOnTap
+        time GioBatDau
+        time GioKetThuc
+        string NoiDungOnTap
+        string MaMon FK
+    }
+
+    TAI_LIEU_ON_TAP {
+        string MaTaiLieu PK
+        string TenTaiLieu
+        string LoaiTaiLieu
+        string DuongDan
+        string MaMon FK
+    }

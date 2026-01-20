@@ -1,3 +1,14 @@
 CREATE DATABASE ss2ep4;
 USE ss2ep4;
 
+CREATE TABLE Student(
+    MaSV VARCHAR(10) PRIMARY KEY,
+    HoTen VARCHAR(50) NOT NULL,
+);
+
+CREATE TABLE Subject(
+    MaMH VARCHAR(10) PRIMARY KEY,
+    TenMH VARCHAR(50),
+    SoTinChi INT CHECK(SoTinChi > 0)
+);
+

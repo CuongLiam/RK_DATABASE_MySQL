@@ -1,0 +1,3 @@
+CREATE DATABASE ss2ep4;
+USE ss2ep4;
+

@@ -1,0 +1,603 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Markmap</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        font-family:
+          ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      }
+      #mindmap {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+      }
+      .markmap-dark {
+        background: #27272a;
+        color: white;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/style.css"
+    />
+  </head>
+  <body>
+    <svg id="mindmap"></svg>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.12/dist/browser/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/index.js"></script>
+    <script>
+      (() => {
+        setTimeout(() => {
+          const { markmap: S, mm: Q } = window,
+            $ = new S.Toolbar();
+          $.attach(Q);
+          const I = $.render();
+          (I.setAttribute("style", "position:absolute;bottom:20px;right:20px"),
+            document.body.append(I));
+        });
+      })();
+    </script>
+    <script>
+      ((l, U, M, R) => {
+        const N = l();
+        ((window.mm = N.Markmap.create(
+          "svg#mindmap",
+          (U || N.deriveOptions)(R),
+          M,
+        )),
+          window.matchMedia("(prefers-color-scheme: dark)").matches &&
+            document.documentElement.classList.add("markmap-dark"));
+      })(
+        () => window.markmap,
+        null,
+        {
+          content: "MySQL VIEW &amp; INDEX",
+          children: [
+            {
+              content: "Lesson 01: VIEW &#x2013; Khung nh&#xec;n",
+              children: [
+                {
+                  content: "Kh&#xe1;i ni&#x1ec7;m View",
+                  children: [
+                    {
+                      content: "B&#x1ea3;ng &#x1ea3;o (Virtual Table)",
+                      children: [],
+                      payload: { tag: "li", lines: "4,5" },
+                    },
+                    {
+                      content:
+                        "Kh&#xf4;ng l&#x1b0;u d&#x1eef; li&#x1ec7;u v&#x1ead;t l&#xfd;",
+                      children: [],
+                      payload: { tag: "li", lines: "5,6" },
+                    },
+                    {
+                      content: "Ch&#x1ec9; l&#x1b0;u c&#xe2;u l&#x1ec7;nh SQL",
+                      children: [],
+                      payload: { tag: "li", lines: "6,7" },
+                    },
+                    {
+                      content:
+                        "L&#x1ea5;y d&#x1eef; li&#x1ec7;u t&#x1eeb; Base Tables",
+                      children: [],
+                      payload: { tag: "li", lines: "7,8" },
+                    },
+                    {
+                      content:
+                        "Truy c&#x1ead;p View = ch&#x1ea1;y SQL b&#xea;n trong",
+                      children: [],
+                      payload: { tag: "li", lines: "8,10" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "3,4" },
+                },
+                {
+                  content:
+                    "&#x110;&#x1eb7;c &#x111;i&#x1ec3;m n&#x1ed5;i b&#x1ead;t",
+                  children: [
+                    {
+                      content: "T&#xed;nh &#x1ea3;o",
+                      children: [
+                        {
+                          content:
+                            "D&#x1eef; li&#x1ec7;u b&#x1ea3;ng g&#x1ed1;c &#x111;&#x1ed5;i &#x2192; View &#x111;&#x1ed5;i theo",
+                          children: [],
+                          payload: { tag: "li", lines: "12,13" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "11,13" },
+                    },
+                    {
+                      content: "&#x110;&#x1a1;n gi&#x1ea3;n h&#xf3;a",
+                      children: [
+                        {
+                          content:
+                            "G&#xf3;i JOIN ph&#x1ee9;c t&#x1ea1;p th&#xe0;nh 1 t&#xea;n",
+                          children: [],
+                          payload: { tag: "li", lines: "14,15" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "13,15" },
+                    },
+                    {
+                      content: "B&#x1ea3;o m&#x1ead;t",
+                      children: [
+                        {
+                          content:
+                            "&#x1ea8;n c&#x1ed9;t nh&#x1ea1;y c&#x1ea3;m",
+                          children: [],
+                          payload: { tag: "li", lines: "16,17" },
+                        },
+                        {
+                          content:
+                            "Ch&#x1ec9; c&#x1ea5;p quy&#x1ec1;n tr&#xea;n View",
+                          children: [],
+                          payload: { tag: "li", lines: "17,18" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "15,18" },
+                    },
+                    {
+                      content: "T&#xed;nh nh&#x1ea5;t qu&#xe1;n",
+                      children: [
+                        {
+                          content:
+                            "Thay &#x111;&#x1ed5;i b&#x1ea3;ng g&#x1ed1;c kh&#xf4;ng &#x1ea3;nh h&#x1b0;&#x1edf;ng &#x1ee9;ng d&#x1ee5;ng",
+                          children: [],
+                          payload: { tag: "li", lines: "19,21" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "18,21" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "10,11" },
+                },
+                {
+                  content: "T&#x1ea1;o v&#xe0; x&#xf3;a View",
+                  children: [
+                    {
+                      content: "CREATE OR REPLACE VIEW",
+                      children: [
+                        {
+                          content:
+                            "T&#x1ea1;o m&#x1edb;i ho&#x1eb7;c c&#x1ead;p nh&#x1ead;t",
+                          children: [],
+                          payload: { tag: "li", lines: "23,24" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "22,24" },
+                    },
+                    {
+                      content: "DROP VIEW",
+                      children: [
+                        {
+                          content: "X&#xf3;a View",
+                          children: [],
+                          payload: { tag: "li", lines: "25,26" },
+                        },
+                        {
+                          content:
+                            "Kh&#xf4;ng &#x1ea3;nh h&#x1b0;&#x1edf;ng d&#x1eef; li&#x1ec7;u g&#x1ed1;c",
+                          children: [],
+                          payload: { tag: "li", lines: "26,28" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "24,28" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "21,22" },
+                },
+                {
+                  content: "WITH CHECK OPTION",
+                  children: [
+                    {
+                      content:
+                        "V&#x1ea5;n &#x111;&#x1ec1; khi kh&#xf4;ng c&#xf3;",
+                      children: [
+                        {
+                          content:
+                            "INSERT/UPDATE qua View nh&#x1b0;ng kh&#xf4;ng th&#x1ecf;a WHERE",
+                          children: [],
+                          payload: { tag: "li", lines: "30,31" },
+                        },
+                        {
+                          content:
+                            "Th&#xea;m xong &#x2192; d&#x1eef; li&#x1ec7;u bi&#x1ebf;n m&#x1ea5;t kh&#x1ecf;i View",
+                          children: [],
+                          payload: { tag: "li", lines: "31,32" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "29,32" },
+                    },
+                    {
+                      content: "Gi&#x1ea3;i ph&#xe1;p",
+                      children: [
+                        {
+                          content: "WITH CHECK OPTION",
+                          children: [],
+                          payload: { tag: "li", lines: "33,34" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "32,34" },
+                    },
+                    {
+                      content: "T&#xe1;c d&#x1ee5;ng",
+                      children: [
+                        {
+                          content:
+                            "B&#x1eaf;t bu&#x1ed9;c d&#x1eef; li&#x1ec7;u INSERT/UPDATE ph&#x1ea3;i th&#x1ecf;a &#x111;i&#x1ec1;u ki&#x1ec7;n View",
+                          children: [],
+                          payload: { tag: "li", lines: "35,36" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "34,36" },
+                    },
+                    {
+                      content: "Vai tr&#xf2;",
+                      children: [
+                        {
+                          content:
+                            "B&#x1ea3;o v&#x1ec7; to&#xe0;n v&#x1eb9;n logic d&#x1eef; li&#x1ec7;u",
+                          children: [],
+                          payload: { tag: "li", lines: "37,39" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "36,39" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "28,29" },
+                },
+                {
+                  content: "T&#x1ed5;ng k&#x1ebf;t View",
+                  children: [
+                    {
+                      content: "&#x110;&#xf3;ng g&#xf3;i logic",
+                      children: [],
+                      payload: { tag: "li", lines: "40,41" },
+                    },
+                    {
+                      content: "L&#xe0;m s&#x1ea1;ch code",
+                      children: [],
+                      payload: { tag: "li", lines: "41,42" },
+                    },
+                    {
+                      content:
+                        "B&#x1ea3;o v&#x1ec7; d&#x1eef; li&#x1ec7;u nh&#x1ea1;y c&#x1ea3;m",
+                      children: [],
+                      payload: { tag: "li", lines: "42,44" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "39,40" },
+                },
+              ],
+              payload: { tag: "h2", lines: "2,3" },
+            },
+            {
+              content: "Lesson 02: INDEX &#x2013; Ch&#x1ec9; m&#x1ee5;c",
+              children: [
+                {
+                  content: "Kh&#xe1;i ni&#x1ec7;m Index",
+                  children: [
+                    {
+                      content:
+                        "C&#x1ea5;u tr&#xfa;c d&#x1eef; li&#x1ec7;u (B-Tree)",
+                      children: [],
+                      payload: { tag: "li", lines: "48,49" },
+                    },
+                    {
+                      content: "Gi&#xfa;p t&#xec;m ki&#x1ebf;m nhanh",
+                      children: [],
+                      payload: { tag: "li", lines: "49,50" },
+                    },
+                    {
+                      content: "Tr&#xe1;nh Full Table Scan",
+                      children: [],
+                      payload: { tag: "li", lines: "50,51" },
+                    },
+                    {
+                      content: "T&#x103;ng t&#x1ed1;c SELECT",
+                      children: [],
+                      payload: { tag: "li", lines: "51,53" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "47,48" },
+                },
+                {
+                  content: "L&#x1ee3;i &#xed;ch",
+                  children: [
+                    {
+                      content: "WHERE nhanh h&#x1a1;n",
+                      children: [],
+                      payload: { tag: "li", lines: "54,55" },
+                    },
+                    {
+                      content: "JOIN nhanh h&#x1a1;n",
+                      children: [],
+                      payload: { tag: "li", lines: "55,56" },
+                    },
+                    {
+                      content: "ORDER BY hi&#x1ec7;u qu&#x1ea3;",
+                      children: [],
+                      payload: { tag: "li", lines: "56,57" },
+                    },
+                    {
+                      content: "Gi&#x1ea3;m t&#x1ea3;i CPU &amp; Disk",
+                      children: [],
+                      payload: { tag: "li", lines: "57,59" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "53,54" },
+                },
+                {
+                  content: "Ph&#xe2;n lo&#x1ea1;i Index",
+                  children: [
+                    {
+                      content: "Primary Key Index",
+                      children: [
+                        {
+                          content: "Duy nh&#x1ea5;t",
+                          children: [],
+                          payload: { tag: "li", lines: "61,62" },
+                        },
+                        {
+                          content: "Kh&#xf4;ng NULL",
+                          children: [],
+                          payload: { tag: "li", lines: "62,63" },
+                        },
+                        {
+                          content: "T&#x1ef1; &#x111;&#x1ed9;ng t&#x1ea1;o",
+                          children: [],
+                          payload: { tag: "li", lines: "63,64" },
+                        },
+                        {
+                          content: "Clustered Index",
+                          children: [],
+                          payload: { tag: "li", lines: "64,65" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "60,65" },
+                    },
+                    {
+                      content: "Unique Index",
+                      children: [
+                        {
+                          content: "Kh&#xf4;ng tr&#xf9;ng",
+                          children: [],
+                          payload: { tag: "li", lines: "66,67" },
+                        },
+                        {
+                          content: "C&#xf3; th&#x1ec3; NULL",
+                          children: [],
+                          payload: { tag: "li", lines: "67,68" },
+                        },
+                        {
+                          content: "D&#xf9;ng cho Email, S&#x110;T",
+                          children: [],
+                          payload: { tag: "li", lines: "68,69" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "65,69" },
+                    },
+                    {
+                      content: "Regular Index",
+                      children: [
+                        {
+                          content:
+                            "Kh&#xf4;ng y&#xea;u c&#x1ea7;u duy nh&#x1ea5;t",
+                          children: [],
+                          payload: { tag: "li", lines: "70,71" },
+                        },
+                        {
+                          content: "Ph&#x1ed5; bi&#x1ebf;n nh&#x1ea5;t",
+                          children: [],
+                          payload: { tag: "li", lines: "71,72" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "69,72" },
+                    },
+                    {
+                      content: "Full-text Index",
+                      children: [
+                        {
+                          content: "T&#xec;m ki&#x1ebf;m v&#x103;n b&#x1ea3;n",
+                          children: [],
+                          payload: { tag: "li", lines: "73,74" },
+                        },
+                        {
+                          content: "Thay th&#x1ebf; LIKE %...%",
+                          children: [],
+                          payload: { tag: "li", lines: "74,75" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "72,75" },
+                    },
+                    {
+                      content: "Composite Index",
+                      children: [
+                        {
+                          content: "Nhi&#x1ec1;u c&#x1ed9;t",
+                          children: [],
+                          payload: { tag: "li", lines: "76,77" },
+                        },
+                        {
+                          content:
+                            "Quan tr&#x1ecd;ng th&#x1ee9; t&#x1ef1; c&#x1ed9;t",
+                          children: [],
+                          payload: { tag: "li", lines: "77,79" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "75,79" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "59,60" },
+                },
+                {
+                  content: "C&#xfa; ph&#xe1;p Index",
+                  children: [
+                    {
+                      content: "T&#x1ea1;o Index th&#x1b0;&#x1edd;ng",
+                      children: [],
+                      payload: { tag: "li", lines: "80,81" },
+                    },
+                    {
+                      content: "T&#x1ea1;o Unique Index",
+                      children: [],
+                      payload: { tag: "li", lines: "81,82" },
+                    },
+                    {
+                      content: "T&#x1ea1;o Composite Index",
+                      children: [],
+                      payload: { tag: "li", lines: "82,83" },
+                    },
+                    {
+                      content: "DROP INDEX",
+                      children: [],
+                      payload: { tag: "li", lines: "83,85" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "79,80" },
+                },
+                {
+                  content: "H&#x1ea1;n ch&#x1ebf; c&#x1ee7;a Index",
+                  children: [
+                    {
+                      content: "T&#x1ed1;n dung l&#x1b0;&#x1ee3;ng",
+                      children: [
+                        {
+                          content: "L&#x1b0;u B-Tree",
+                          children: [],
+                          payload: { tag: "li", lines: "87,88" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "86,88" },
+                    },
+                    {
+                      content: "Gi&#x1ea3;m t&#x1ed1;c &#x111;&#x1ed9; ghi",
+                      children: [
+                        {
+                          content: "INSERT",
+                          children: [],
+                          payload: { tag: "li", lines: "89,90" },
+                        },
+                        {
+                          content: "UPDATE",
+                          children: [],
+                          payload: { tag: "li", lines: "90,91" },
+                        },
+                        {
+                          content: "DELETE",
+                          children: [],
+                          payload: { tag: "li", lines: "91,92" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "88,92" },
+                    },
+                    {
+                      content: "Kh&#xf3; b&#x1ea3;o tr&#xec;",
+                      children: [
+                        {
+                          content: "Ph&#xe2;n m&#x1ea3;nh Index",
+                          children: [],
+                          payload: { tag: "li", lines: "93,95" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "92,95" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "85,86" },
+                },
+                {
+                  content: "Khi n&#xea;n d&#xf9;ng Index",
+                  children: [
+                    {
+                      content: "Primary Key",
+                      children: [],
+                      payload: { tag: "li", lines: "96,97" },
+                    },
+                    {
+                      content: "Foreign Key",
+                      children: [],
+                      payload: { tag: "li", lines: "97,98" },
+                    },
+                    {
+                      content: "C&#x1ed9;t hay WHERE",
+                      children: [],
+                      payload: { tag: "li", lines: "98,99" },
+                    },
+                    {
+                      content: "C&#x1ed9;t hay ORDER BY",
+                      children: [],
+                      payload: { tag: "li", lines: "99,100" },
+                    },
+                    {
+                      content:
+                        "C&#x1ed9;t c&#xf3; &#x111;&#x1ed9; ph&#xe2;n t&#xe1;n cao",
+                      children: [],
+                      payload: { tag: "li", lines: "100,102" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "95,96" },
+                },
+                {
+                  content: "Khi kh&#xf4;ng n&#xea;n d&#xf9;ng Index",
+                  children: [
+                    {
+                      content: "B&#x1ea3;ng nh&#x1ecf;",
+                      children: [],
+                      payload: { tag: "li", lines: "103,104" },
+                    },
+                    {
+                      content: "C&#x1ed9;t UPDATE li&#xea;n t&#x1ee5;c",
+                      children: [],
+                      payload: { tag: "li", lines: "104,105" },
+                    },
+                    {
+                      content:
+                        "C&#x1ed9;t &#xed;t gi&#xe1; tr&#x1ecb; (Nam/N&#x1eef;)",
+                      children: [],
+                      payload: { tag: "li", lines: "105,107" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "102,103" },
+                },
+                {
+                  content: "T&#x1ed5;ng k&#x1ebf;t Index",
+                  children: [
+                    {
+                      content: "SELECT nhanh",
+                      children: [],
+                      payload: { tag: "li", lines: "108,109" },
+                    },
+                    {
+                      content: "Ghi ch&#x1ead;m h&#x1a1;n",
+                      children: [],
+                      payload: { tag: "li", lines: "109,110" },
+                    },
+                    {
+                      content: "Kh&#xf4;ng l&#x1ea1;m d&#x1ee5;ng",
+                      children: [],
+                      payload: { tag: "li", lines: "110,111" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "107,108" },
+                },
+              ],
+              payload: { tag: "h2", lines: "46,47" },
+            },
+          ],
+          payload: { tag: "h1", lines: "0,1" },
+        },
+        null,
+      );
+    </script>
+  </body>
+</html>

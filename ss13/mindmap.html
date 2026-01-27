@@ -1,0 +1,724 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Markmap</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        font-family:
+          ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      }
+      #mindmap {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+      }
+      .markmap-dark {
+        background: #27272a;
+        color: white;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/style.css"
+    />
+  </head>
+  <body>
+    <svg id="mindmap"></svg>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.12/dist/browser/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/index.js"></script>
+    <script>
+      (() => {
+        setTimeout(() => {
+          const { markmap: S, mm: Q } = window,
+            $ = new S.Toolbar();
+          $.attach(Q);
+          const I = $.render();
+          (I.setAttribute("style", "position:absolute;bottom:20px;right:20px"),
+            document.body.append(I));
+        });
+      })();
+    </script>
+    <script>
+      ((l, U, M, R) => {
+        const N = l();
+        ((window.mm = N.Markmap.create(
+          "svg#mindmap",
+          (U || N.deriveOptions)(R),
+          M,
+        )),
+          window.matchMedia("(prefers-color-scheme: dark)").matches &&
+            document.documentElement.classList.add("markmap-dark"));
+      })(
+        () => window.markmap,
+        null,
+        {
+          content: "Trigger trong C&#x1a1; s&#x1edf; d&#x1eef; li&#x1ec7;u",
+          children: [
+            {
+              content:
+                "Lesson 01: Kh&#xe1;i ni&#x1ec7;m v&#xe0; &#x110;&#x1eb7;c &#x111;i&#x1ec3;m",
+              children: [
+                {
+                  content: "Kh&#xe1;i ni&#x1ec7;m Trigger",
+                  children: [
+                    {
+                      content:
+                        "&#x110;&#x1ed1;i t&#x1b0;&#x1ee3;ng CSDL t&#x1ef1; &#x111;&#x1ed9;ng k&#xed;ch ho&#x1ea1;t",
+                      children: [],
+                      payload: { tag: "li", lines: "5,6" },
+                    },
+                    {
+                      content:
+                        "Th&#x1ef1;c thi ng&#x1ea7;m, kh&#xf4;ng g&#x1ecd;i tr&#x1ef1;c ti&#x1ebf;p",
+                      children: [],
+                      payload: { tag: "li", lines: "6,7" },
+                    },
+                    {
+                      content:
+                        "Gi&#xe1;m s&#xe1;t v&#xe0; b&#x1ea3;o v&#x1ec7; d&#x1eef; li&#x1ec7;u",
+                      children: [],
+                      payload: { tag: "li", lines: "7,8" },
+                    },
+                    {
+                      content: "K&#xed;ch ho&#x1ea1;t khi",
+                      children: [
+                        {
+                          content: "INSERT",
+                          children: [],
+                          payload: { tag: "li", lines: "9,10" },
+                        },
+                        {
+                          content: "UPDATE",
+                          children: [],
+                          payload: { tag: "li", lines: "10,11" },
+                        },
+                        {
+                          content: "DELETE",
+                          children: [],
+                          payload: { tag: "li", lines: "11,13" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "8,13" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "4,5" },
+                },
+                {
+                  content: "&#x110;&#x1eb7;c &#x111;i&#x1ec3;m ch&#xed;nh",
+                  children: [
+                    {
+                      content: "T&#x1ef1; &#x111;&#x1ed9;ng h&#xf3;a",
+                      children: [
+                        {
+                          content: "Ch&#x1ea1;y t&#x1ef1; &#x111;&#x1ed9;ng",
+                          children: [],
+                          payload: { tag: "li", lines: "15,16" },
+                        },
+                        {
+                          content:
+                            "&#x110;&#x1ea3;m b&#x1ea3;o quy t&#x1eaf;c nghi&#x1ec7;p v&#x1ee5;",
+                          children: [],
+                          payload: { tag: "li", lines: "16,17" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "14,17" },
+                    },
+                    {
+                      content: "Th&#x1edd;i gian k&#xed;ch ho&#x1ea1;t",
+                      children: [
+                        {
+                          content: "BEFORE",
+                          children: [],
+                          payload: { tag: "li", lines: "18,19" },
+                        },
+                        {
+                          content: "AFTER",
+                          children: [],
+                          payload: { tag: "li", lines: "19,20" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "17,20" },
+                    },
+                    {
+                      content: "Ph&#x1ea1;m vi t&#xe1;c &#x111;&#x1ed9;ng",
+                      children: [
+                        {
+                          content: "FOR EACH ROW",
+                          children: [],
+                          payload: { tag: "li", lines: "21,22" },
+                        },
+                        {
+                          content:
+                            "FOR EACH STATEMENT (MySQL kh&#xf4;ng h&#x1ed7; tr&#x1ee3;)",
+                          children: [],
+                          payload: { tag: "li", lines: "22,23" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "20,23" },
+                    },
+                    {
+                      content: "Truy c&#x1ead;p d&#x1eef; li&#x1ec7;u",
+                      children: [
+                        {
+                          content: "OLD (d&#x1eef; li&#x1ec7;u c&#x169;)",
+                          children: [],
+                          payload: { tag: "li", lines: "24,25" },
+                        },
+                        {
+                          content: "NEW (d&#x1eef; li&#x1ec7;u m&#x1edb;i)",
+                          children: [],
+                          payload: { tag: "li", lines: "25,27" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "23,27" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "13,14" },
+                },
+                {
+                  content: "&#x1ee8;ng d&#x1ee5;ng th&#x1ef1;c t&#x1ebf;",
+                  children: [
+                    {
+                      content: "Ng&#xe2;n h&#xe0;ng",
+                      children: [
+                        {
+                          content: "Ki&#x1ec3;m so&#xe1;t giao d&#x1ecb;ch",
+                          children: [],
+                          payload: { tag: "li", lines: "29,30" },
+                        },
+                        {
+                          content: "Ghi log",
+                          children: [],
+                          payload: { tag: "li", lines: "30,31" },
+                        },
+                        {
+                          content: "Ki&#x1ec3;m tra h&#x1ea1;n m&#x1ee9;c",
+                          children: [],
+                          payload: { tag: "li", lines: "31,32" },
+                        },
+                        {
+                          content: "Ph&#xe1;t hi&#x1ec7;n gian l&#x1ead;n",
+                          children: [],
+                          payload: { tag: "li", lines: "32,33" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "28,33" },
+                    },
+                    {
+                      content:
+                        "Th&#x1b0;&#x1a1;ng m&#x1ea1;i &#x111;i&#x1ec7;n t&#x1eed;",
+                      children: [
+                        {
+                          content: "C&#x1ead;p nh&#x1ead;t t&#x1ed3;n kho",
+                          children: [],
+                          payload: { tag: "li", lines: "34,35" },
+                        },
+                        {
+                          content:
+                            "T&#xed;nh &#x111;i&#x1ec3;m t&#xed;ch l&#x169;y",
+                          children: [],
+                          payload: { tag: "li", lines: "35,36" },
+                        },
+                        {
+                          content: "Ki&#x1ec3;m tra &#x111;&#x1a1;n h&#xe0;ng",
+                          children: [],
+                          payload: { tag: "li", lines: "36,37" },
+                        },
+                        {
+                          content: "L&#x1ecb;ch s&#x1eed; gi&#xe1;",
+                          children: [],
+                          payload: { tag: "li", lines: "37,38" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "33,38" },
+                    },
+                    {
+                      content: "Logistics",
+                      children: [
+                        {
+                          content:
+                            "Tr&#x1ea1;ng th&#xe1;i v&#x1ead;n &#x111;&#x1a1;n",
+                          children: [],
+                          payload: { tag: "li", lines: "39,40" },
+                        },
+                        {
+                          content: "Th&#x1edd;i gian giao h&#xe0;ng",
+                          children: [],
+                          payload: { tag: "li", lines: "40,41" },
+                        },
+                        {
+                          content: "Chi ph&#xed; v&#x1ead;n chuy&#x1ec3;n",
+                          children: [],
+                          payload: { tag: "li", lines: "41,42" },
+                        },
+                        {
+                          content: "Theo d&#xf5;i v&#x1ecb; tr&#xed;",
+                          children: [],
+                          payload: { tag: "li", lines: "42,43" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "38,43" },
+                    },
+                    {
+                      content: "&#x1ee8;ng d&#x1ee5;ng kh&#xe1;c",
+                      children: [
+                        {
+                          content: "Y t&#x1ebf;",
+                          children: [],
+                          payload: { tag: "li", lines: "44,45" },
+                        },
+                        {
+                          content: "Gi&#xe1;o d&#x1ee5;c",
+                          children: [],
+                          payload: { tag: "li", lines: "45,46" },
+                        },
+                        {
+                          content: "HRM",
+                          children: [],
+                          payload: { tag: "li", lines: "46,48" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "43,48" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "27,28" },
+                },
+              ],
+              payload: { tag: "h2", lines: "2,3" },
+            },
+            {
+              content:
+                "Lesson 02: C&#xfa; ph&#xe1;p t&#x1ea1;o v&#xe0; x&#xf3;a Trigger",
+              children: [
+                {
+                  content: "T&#x1ea1;o Trigger",
+                  children: [
+                    {
+                      content: "T&#xea;n trigger",
+                      children: [
+                        {
+                          content: "Duy nh&#x1ea5;t trong schema",
+                          children: [],
+                          payload: { tag: "li", lines: "52,53" },
+                        },
+                        {
+                          content:
+                            "Quy &#x1b0;&#x1edb;c: Th&#x1edd;iGian_S&#x1ef1;Ki&#x1ec7;n_B&#x1ea3;ng",
+                          children: [],
+                          payload: { tag: "li", lines: "53,54" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "51,54" },
+                    },
+                    {
+                      content: "Th&#x1edd;i gian k&#xed;ch ho&#x1ea1;t",
+                      children: [
+                        {
+                          content: "BEFORE",
+                          children: [
+                            {
+                              content: "Thay &#x111;&#x1ed5;i NEW",
+                              children: [],
+                              payload: { tag: "li", lines: "56,57" },
+                            },
+                            {
+                              content: "Ki&#x1ec3;m tra r&#xe0;ng bu&#x1ed9;c",
+                              children: [],
+                              payload: { tag: "li", lines: "57,58" },
+                            },
+                          ],
+                          payload: { tag: "li", lines: "55,58" },
+                        },
+                        {
+                          content: "AFTER",
+                          children: [
+                            {
+                              content: "Kh&#xf4;ng &#x111;&#x1ed5;i NEW",
+                              children: [],
+                              payload: { tag: "li", lines: "59,60" },
+                            },
+                            {
+                              content:
+                                "Ghi log, c&#x1ead;p nh&#x1ead;t b&#x1ea3;ng kh&#xe1;c",
+                              children: [],
+                              payload: { tag: "li", lines: "60,61" },
+                            },
+                          ],
+                          payload: { tag: "li", lines: "58,61" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "54,61" },
+                    },
+                    {
+                      content: "Thao t&#xe1;c",
+                      children: [
+                        {
+                          content: "INSERT",
+                          children: [],
+                          payload: { tag: "li", lines: "62,63" },
+                        },
+                        {
+                          content: "UPDATE",
+                          children: [],
+                          payload: { tag: "li", lines: "63,64" },
+                        },
+                        {
+                          content: "DELETE",
+                          children: [],
+                          payload: { tag: "li", lines: "64,65" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "61,65" },
+                    },
+                    {
+                      content: "B&#x1ea3;ng g&#x1eaf;n trigger",
+                      children: [],
+                      payload: { tag: "li", lines: "65,66" },
+                    },
+                    {
+                      content: "FOR EACH ROW",
+                      children: [
+                        {
+                          content: "B&#x1eaf;t bu&#x1ed9;c trong MySQL",
+                          children: [],
+                          payload: { tag: "li", lines: "67,69" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "66,69" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "50,51" },
+                },
+                {
+                  content: "OLD v&#xe0; NEW",
+                  children: [
+                    {
+                      content: "INSERT",
+                      children: [
+                        {
+                          content: "NEW t&#x1ed3;n t&#x1ea1;i",
+                          children: [],
+                          payload: { tag: "li", lines: "71,72" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "70,72" },
+                    },
+                    {
+                      content: "UPDATE",
+                      children: [
+                        {
+                          content: "OLD v&#xe0; NEW t&#x1ed3;n t&#x1ea1;i",
+                          children: [],
+                          payload: { tag: "li", lines: "73,74" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "72,74" },
+                    },
+                    {
+                      content: "DELETE",
+                      children: [
+                        {
+                          content: "OLD t&#x1ed3;n t&#x1ea1;i",
+                          children: [],
+                          payload: { tag: "li", lines: "75,77" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "74,77" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "69,70" },
+                },
+                {
+                  content: "X&#xf3;a Trigger",
+                  children: [
+                    {
+                      content: "DROP TRIGGER",
+                      children: [],
+                      payload: { tag: "li", lines: "78,79" },
+                    },
+                    {
+                      content: "DROP TRIGGER IF EXISTS",
+                      children: [],
+                      payload: { tag: "li", lines: "79,81" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "77,78" },
+                },
+                {
+                  content: "Xem Trigger",
+                  children: [
+                    {
+                      content: "SHOW TRIGGERS",
+                      children: [],
+                      payload: { tag: "li", lines: "82,83" },
+                    },
+                    {
+                      content: "SHOW TRIGGERS FROM database",
+                      children: [],
+                      payload: { tag: "li", lines: "83,84" },
+                    },
+                    {
+                      content: "SHOW TRIGGERS LIKE pattern",
+                      children: [],
+                      payload: { tag: "li", lines: "84,86" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "81,82" },
+                },
+                {
+                  content: "V&#xed; d&#x1ee5;",
+                  children: [
+                    {
+                      content: "BEFORE INSERT",
+                      children: [],
+                      payload: { tag: "li", lines: "87,88" },
+                    },
+                    {
+                      content: "AFTER INSERT",
+                      children: [],
+                      payload: { tag: "li", lines: "88,89" },
+                    },
+                    {
+                      content: "BEFORE UPDATE",
+                      children: [],
+                      payload: { tag: "li", lines: "89,91" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "86,87" },
+                },
+              ],
+              payload: { tag: "h2", lines: "48,49" },
+            },
+            {
+              content:
+                "Lesson 03: &#x1af;u &#x111;i&#x1ec3;m v&#xe0; Nh&#x1b0;&#x1ee3;c &#x111;i&#x1ec3;m",
+              children: [
+                {
+                  content: "&#x1af;u &#x111;i&#x1ec3;m",
+                  children: [
+                    {
+                      content: "To&#xe0;n v&#x1eb9;n d&#x1eef; li&#x1ec7;u",
+                      children: [],
+                      payload: { tag: "li", lines: "94,95" },
+                    },
+                    {
+                      content:
+                        "T&#x1ef1; &#x111;&#x1ed9;ng h&#xf3;a nghi&#x1ec7;p v&#x1ee5;",
+                      children: [],
+                      payload: { tag: "li", lines: "95,96" },
+                    },
+                    {
+                      content:
+                        "Ki&#x1ec3;m so&#xe1;t v&#xe0; gi&#xe1;m s&#xe1;t",
+                      children: [],
+                      payload: { tag: "li", lines: "96,97" },
+                    },
+                    {
+                      content:
+                        "Logic nghi&#x1ec7;p v&#x1ee5; ph&#x1ee9;c t&#x1ea1;p",
+                      children: [],
+                      payload: { tag: "li", lines: "97,98" },
+                    },
+                    {
+                      content: "T&#xed;nh nh&#x1ea5;t qu&#xe1;n",
+                      children: [],
+                      payload: { tag: "li", lines: "98,100" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "93,94" },
+                },
+                {
+                  content: "Nh&#x1b0;&#x1ee3;c &#x111;i&#x1ec3;m",
+                  children: [
+                    {
+                      content: "Kh&#xf3; debug",
+                      children: [],
+                      payload: { tag: "li", lines: "101,102" },
+                    },
+                    {
+                      content:
+                        "&#x1ea2;nh h&#x1b0;&#x1edf;ng hi&#x1ec7;u n&#x103;ng",
+                      children: [],
+                      payload: { tag: "li", lines: "102,103" },
+                    },
+                    {
+                      content: "Ph&#x1ee5; thu&#x1ed9;c DBMS",
+                      children: [],
+                      payload: { tag: "li", lines: "103,104" },
+                    },
+                    {
+                      content: "Kh&#xf3; ki&#x1ec3;m so&#xe1;t lu&#x1ed3;ng",
+                      children: [],
+                      payload: { tag: "li", lines: "104,105" },
+                    },
+                    {
+                      content: "R&#x1ee7;i ro b&#x1ea3;o m&#x1ead;t",
+                      children: [],
+                      payload: { tag: "li", lines: "105,107" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "100,101" },
+                },
+                {
+                  content: "So s&#xe1;nh Trigger vs Stored Procedure",
+                  children: [
+                    {
+                      content: "Trigger",
+                      children: [
+                        {
+                          content: "T&#x1ef1; &#x111;&#x1ed9;ng",
+                          children: [],
+                          payload: { tag: "li", lines: "109,110" },
+                        },
+                        {
+                          content: "Kh&#xf4;ng tham s&#x1ed1;",
+                          children: [],
+                          payload: { tag: "li", lines: "110,111" },
+                        },
+                        {
+                          content: "Kh&#xf4;ng tr&#x1ea3; v&#x1ec1;",
+                          children: [],
+                          payload: { tag: "li", lines: "111,112" },
+                        },
+                        {
+                          content: "Trong transaction",
+                          children: [],
+                          payload: { tag: "li", lines: "112,113" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "108,113" },
+                    },
+                    {
+                      content: "Stored Procedure",
+                      children: [
+                        {
+                          content: "G&#x1ecd;i th&#x1ee7; c&#xf4;ng",
+                          children: [],
+                          payload: { tag: "li", lines: "114,115" },
+                        },
+                        {
+                          content: "C&#xf3; tham s&#x1ed1;",
+                          children: [],
+                          payload: { tag: "li", lines: "115,116" },
+                        },
+                        {
+                          content: "C&#xf3; tr&#x1ea3; v&#x1ec1;",
+                          children: [],
+                          payload: { tag: "li", lines: "116,117" },
+                        },
+                        {
+                          content: "Ch&#x1ee7; &#x111;&#x1ed9;ng transaction",
+                          children: [],
+                          payload: { tag: "li", lines: "117,119" },
+                        },
+                      ],
+                      payload: { tag: "li", lines: "113,119" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "107,108" },
+                },
+                {
+                  content: "Best Practices",
+                  children: [
+                    {
+                      content: "&#x110;&#x1eb7;t t&#xea;n r&#xf5; r&#xe0;ng",
+                      children: [],
+                      payload: { tag: "li", lines: "120,121" },
+                    },
+                    {
+                      content: "Trigger &#x111;&#x1a1;n gi&#x1ea3;n",
+                      children: [],
+                      payload: { tag: "li", lines: "121,122" },
+                    },
+                    {
+                      content: "Tr&#xe1;nh v&#xf2;ng l&#x1eb7;p trigger",
+                      children: [],
+                      payload: { tag: "li", lines: "122,123" },
+                    },
+                    {
+                      content: "DROP IF EXISTS",
+                      children: [],
+                      payload: { tag: "li", lines: "123,124" },
+                    },
+                    {
+                      content: "Ghi log l&#x1ed7;i",
+                      children: [],
+                      payload: { tag: "li", lines: "124,126" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "119,120" },
+                },
+                {
+                  content: "Khi n&#xea;n d&#xf9;ng",
+                  children: [
+                    {
+                      content:
+                        "To&#xe0;n v&#x1eb9;n d&#x1eef; li&#x1ec7;u ph&#x1ee9;c t&#x1ea1;p",
+                      children: [],
+                      payload: { tag: "li", lines: "127,128" },
+                    },
+                    {
+                      content: "Ghi log t&#x1ef1; &#x111;&#x1ed9;ng",
+                      children: [],
+                      payload: { tag: "li", lines: "128,129" },
+                    },
+                    {
+                      content: "&#x110;&#x1ed3;ng b&#x1ed9; b&#x1ea3;ng",
+                      children: [],
+                      payload: { tag: "li", lines: "129,130" },
+                    },
+                    {
+                      content: "Logic lu&#xf4;n ph&#x1ea3;i ch&#x1ea1;y",
+                      children: [],
+                      payload: { tag: "li", lines: "130,132" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "126,127" },
+                },
+                {
+                  content: "Khi kh&#xf4;ng n&#xea;n d&#xf9;ng",
+                  children: [
+                    {
+                      content:
+                        "Logic x&#x1eed; l&#xfd; &#x1edf; &#x1ee9;ng d&#x1ee5;ng",
+                      children: [],
+                      payload: { tag: "li", lines: "133,134" },
+                    },
+                    {
+                      content: "&#x1af;u ti&#xea;n hi&#x1ec7;u n&#x103;ng",
+                      children: [],
+                      payload: { tag: "li", lines: "134,135" },
+                    },
+                    {
+                      content: "H&#x1ec7; th&#x1ed1;ng ph&#x1ee9;c t&#x1ea1;p",
+                      children: [],
+                      payload: { tag: "li", lines: "135,136" },
+                    },
+                    {
+                      content: "C&#xf3; th&#x1ec3; d&#xf9;ng constraint",
+                      children: [],
+                      payload: { tag: "li", lines: "136,137" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "132,133" },
+                },
+              ],
+              payload: { tag: "h2", lines: "91,92" },
+            },
+          ],
+          payload: { tag: "h1", lines: "0,1" },
+        },
+        null,
+      );
+    </script>
+  </body>
+</html>

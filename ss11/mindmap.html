@@ -1,0 +1,522 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Markmap</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        font-family:
+          ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      }
+      #mindmap {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+      }
+      .markmap-dark {
+        background: #27272a;
+        color: white;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/style.css"
+    />
+  </head>
+  <body>
+    <svg id="mindmap"></svg>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.12/dist/browser/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/index.js"></script>
+    <script>
+      (() => {
+        setTimeout(() => {
+          const { markmap: S, mm: Q } = window,
+            $ = new S.Toolbar();
+          $.attach(Q);
+          const I = $.render();
+          (I.setAttribute("style", "position:absolute;bottom:20px;right:20px"),
+            document.body.append(I));
+        });
+      })();
+    </script>
+    <script>
+      ((l, U, M, R) => {
+        const N = l();
+        ((window.mm = N.Markmap.create(
+          "svg#mindmap",
+          (U || N.deriveOptions)(R),
+          M,
+        )),
+          window.matchMedia("(prefers-color-scheme: dark)").matches &&
+            document.documentElement.classList.add("markmap-dark"));
+      })(
+        () => window.markmap,
+        null,
+        {
+          content: "MySQL Stored Procedure",
+          children: [
+            {
+              content:
+                "Lesson 01: Kh&#xe1;i ni&#x1ec7;m v&#xe0; Thao t&#xe1;c v&#x1edb;i Th&#x1ee7; t&#x1ee5;c",
+              children: [
+                {
+                  content: "Kh&#xe1;i ni&#x1ec7;m",
+                  children: [
+                    {
+                      content: "Stored Procedure",
+                      children: [],
+                      payload: { tag: "li", lines: "4,5" },
+                    },
+                    {
+                      content: "T&#x1ead;p h&#x1ee3;p c&#xe2;u l&#x1ec7;nh SQL",
+                      children: [],
+                      payload: { tag: "li", lines: "5,6" },
+                    },
+                    {
+                      content: "L&#x1b0;u tr&#x1eef; trong Database Server",
+                      children: [],
+                      payload: { tag: "li", lines: "6,7" },
+                    },
+                    {
+                      content:
+                        "T&#x1b0;&#x1a1;ng t&#x1ef1; Function trong l&#x1ead;p tr&#xec;nh",
+                      children: [],
+                      payload: { tag: "li", lines: "7,9" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "3,4" },
+                },
+                {
+                  content:
+                    "&#x110;&#x1eb7;c &#x111;i&#x1ec3;m n&#x1ed5;i b&#x1ead;t",
+                  children: [
+                    {
+                      content: "T&#xe1;i s&#x1eed; d&#x1ee5;ng",
+                      children: [],
+                      payload: { tag: "li", lines: "10,11" },
+                    },
+                    {
+                      content: "Hi&#x1ec7;u n&#x103;ng cao",
+                      children: [],
+                      payload: { tag: "li", lines: "11,12" },
+                    },
+                    {
+                      content: "B&#x1ea3;o m&#x1ead;t",
+                      children: [],
+                      payload: { tag: "li", lines: "12,13" },
+                    },
+                    {
+                      content:
+                        "Gi&#x1ea3;m l&#x1b0;u l&#x1b0;&#x1ee3;ng m&#x1ea1;ng",
+                      children: [],
+                      payload: { tag: "li", lines: "13,15" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "9,10" },
+                },
+                {
+                  content: "C&#xfa; ph&#xe1;p t&#x1ea1;o Th&#x1ee7; t&#x1ee5;c",
+                  children: [
+                    {
+                      content: "V&#x1ea5;n &#x111;&#x1ec1; d&#x1ea5;u ;",
+                      children: [],
+                      payload: { tag: "li", lines: "16,17" },
+                    },
+                    {
+                      content: "C&#x1ea7;n &#x111;&#x1ed5;i DELIMITER",
+                      children: [],
+                      payload: { tag: "li", lines: "17,18" },
+                    },
+                    {
+                      content: "DELIMITER &#x24;&#x24; ho&#x1eb7;c //",
+                      children: [],
+                      payload: { tag: "li", lines: "18,20" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "15,16" },
+                },
+                {
+                  content: "C&#xe1;c b&#x1b0;&#x1edb;c t&#x1ea1;o",
+                  children: [
+                    {
+                      content: "&#x110;&#x1ed5;i DELIMITER",
+                      children: [],
+                      payload: { tag: "li", lines: "21,22" },
+                    },
+                    {
+                      content: "CREATE PROCEDURE",
+                      children: [],
+                      payload: { tag: "li", lines: "22,23" },
+                    },
+                    {
+                      content: "BEGIN ... END",
+                      children: [],
+                      payload: { tag: "li", lines: "23,24" },
+                    },
+                    {
+                      content: "Kh&#xf4;i ph&#x1ee5;c DELIMITER ;",
+                      children: [],
+                      payload: { tag: "li", lines: "24,26" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "20,21" },
+                },
+                {
+                  content: "V&#xed; d&#x1ee5;",
+                  children: [
+                    {
+                      content:
+                        "Th&#x1ee7; t&#x1ee5;c l&#x1ea5;y nh&#xe2;n vi&#xea;n theo ph&#xf2;ng ban",
+                      children: [],
+                      payload: { tag: "li", lines: "27,28" },
+                    },
+                    {
+                      content: "Tham s&#x1ed1; IN",
+                      children: [],
+                      payload: { tag: "li", lines: "28,30" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "26,27" },
+                },
+                {
+                  content: "G&#x1ecd;i Th&#x1ee7; t&#x1ee5;c",
+                  children: [
+                    {
+                      content: "D&#xf9;ng CALL",
+                      children: [],
+                      payload: { tag: "li", lines: "31,32" },
+                    },
+                    {
+                      content: "CALL TenThuTuc(...)",
+                      children: [],
+                      payload: { tag: "li", lines: "32,34" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "30,31" },
+                },
+                {
+                  content: "X&#xf3;a Th&#x1ee7; t&#x1ee5;c",
+                  children: [
+                    {
+                      content: "DROP PROCEDURE",
+                      children: [],
+                      payload: { tag: "li", lines: "35,36" },
+                    },
+                    {
+                      content: "DROP PROCEDURE IF EXISTS",
+                      children: [],
+                      payload: { tag: "li", lines: "36,38" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "34,35" },
+                },
+                {
+                  content: "Logic trong Procedure",
+                  children: [
+                    {
+                      content: "Khai b&#xe1;o bi&#x1ebf;n",
+                      children: [],
+                      payload: { tag: "li", lines: "39,40" },
+                    },
+                    {
+                      content: "IF / ELSE",
+                      children: [],
+                      payload: { tag: "li", lines: "40,41" },
+                    },
+                    {
+                      content: "WHILE",
+                      children: [],
+                      payload: { tag: "li", lines: "41,42" },
+                    },
+                    {
+                      content:
+                        "V&#xed; d&#x1ee5; t&#x103;ng l&#x1b0;&#x1a1;ng c&#xf3; &#x111;i&#x1ec1;u ki&#x1ec7;n",
+                      children: [],
+                      payload: { tag: "li", lines: "42,44" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "38,39" },
+                },
+                {
+                  content: "T&#x1ed5;ng k&#x1ebf;t Lesson 01",
+                  children: [
+                    {
+                      content: "&#x110;&#xf3;ng g&#xf3;i logic",
+                      children: [],
+                      payload: { tag: "li", lines: "45,46" },
+                    },
+                    {
+                      content: "D&#x1ec5; b&#x1ea3;o tr&#xec;",
+                      children: [],
+                      payload: { tag: "li", lines: "46,47" },
+                    },
+                    {
+                      content: "An to&#xe0;n d&#x1eef; li&#x1ec7;u",
+                      children: [],
+                      payload: { tag: "li", lines: "47,49" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "44,45" },
+                },
+              ],
+              payload: { tag: "h2", lines: "2,3" },
+            },
+            {
+              content: "Lesson 02: Tham s&#x1ed1; IN, OUT, INOUT",
+              children: [
+                {
+                  content: "Tham s&#x1ed1; l&#xe0; g&#xec;?",
+                  children: [
+                    {
+                      content: "Bi&#x1ebf;n &#x111;&#x1eb7;c bi&#x1ec7;t",
+                      children: [],
+                      payload: { tag: "li", lines: "53,54" },
+                    },
+                    {
+                      content:
+                        "Trao &#x111;&#x1ed5;i d&#x1eef; li&#x1ec7;u ngo&#xe0;i &#x2194; trong",
+                      children: [],
+                      payload: { tag: "li", lines: "54,55" },
+                    },
+                    {
+                      content: "So s&#xe1;nh m&#xe1;y xay sinh t&#x1ed1;",
+                      children: [],
+                      payload: { tag: "li", lines: "55,57" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "52,53" },
+                },
+                {
+                  content: "Ph&#xe2;n lo&#x1ea1;i tham s&#x1ed1;",
+                  children: [
+                    {
+                      content: "IN",
+                      children: [],
+                      payload: { tag: "li", lines: "58,59" },
+                    },
+                    {
+                      content: "OUT",
+                      children: [],
+                      payload: { tag: "li", lines: "59,60" },
+                    },
+                    {
+                      content: "INOUT",
+                      children: [],
+                      payload: { tag: "li", lines: "60,62" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "57,58" },
+                },
+                {
+                  content: "Tham s&#x1ed1; IN",
+                  children: [
+                    {
+                      content: "M&#x1eb7;c &#x111;&#x1ecb;nh",
+                      children: [],
+                      payload: { tag: "li", lines: "63,64" },
+                    },
+                    {
+                      content: "Truy&#x1ec1;n d&#x1eef; li&#x1ec7;u v&#xe0;o",
+                      children: [],
+                      payload: { tag: "li", lines: "64,65" },
+                    },
+                    {
+                      content:
+                        "Kh&#xf4;ng &#x1ea3;nh h&#x1b0;&#x1edf;ng d&#x1eef; li&#x1ec7;u ngo&#xe0;i",
+                      children: [],
+                      payload: { tag: "li", lines: "65,66" },
+                    },
+                    {
+                      content:
+                        "V&#xed; d&#x1ee5; t&#xec;m nh&#xe2;n vi&#xea;n theo ID",
+                      children: [],
+                      payload: { tag: "li", lines: "66,68" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "62,63" },
+                },
+                {
+                  content: "Tham s&#x1ed1; OUT",
+                  children: [
+                    {
+                      content: "Tr&#x1ea3; k&#x1ebf;t qu&#x1ea3; ra ngo&#xe0;i",
+                      children: [],
+                      payload: { tag: "li", lines: "69,70" },
+                    },
+                    {
+                      content:
+                        "Gi&#xe1; tr&#x1ecb; ban &#x111;&#x1ea7;u lu&#xf4;n NULL",
+                      children: [],
+                      payload: { tag: "li", lines: "70,71" },
+                    },
+                    {
+                      content: "G&#xe1;n k&#x1ebf;t qu&#x1ea3; trong procedure",
+                      children: [],
+                      payload: { tag: "li", lines: "71,72" },
+                    },
+                    {
+                      content:
+                        "V&#xed; d&#x1ee5; &#x111;&#x1ebf;m s&#x1ed1; nh&#xe2;n vi&#xea;n",
+                      children: [],
+                      payload: { tag: "li", lines: "72,74" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "68,69" },
+                },
+                {
+                  content: "Tham s&#x1ed1; INOUT",
+                  children: [
+                    {
+                      content: "Hai chi&#x1ec1;u",
+                      children: [],
+                      payload: { tag: "li", lines: "75,76" },
+                    },
+                    {
+                      content: "Nh&#x1ead;n v&#xe0;o v&#xe0; tr&#x1ea3; ra",
+                      children: [],
+                      payload: { tag: "li", lines: "76,77" },
+                    },
+                    {
+                      content:
+                        "V&#xed; d&#x1ee5; n&#x1ea1;p ti&#x1ec1;n t&#xe0;i kho&#x1ea3;n",
+                      children: [],
+                      payload: { tag: "li", lines: "77,79" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "74,75" },
+                },
+                {
+                  content: "Bi&#x1ebf;n trong Procedure",
+                  children: [
+                    {
+                      content: "L&#x1b0;u tr&#x1eef; t&#x1ea1;m",
+                      children: [],
+                      payload: { tag: "li", lines: "80,81" },
+                    },
+                    {
+                      content: "Khai b&#xe1;o b&#x1eb1;ng DECLARE",
+                      children: [],
+                      payload: { tag: "li", lines: "81,82" },
+                    },
+                    {
+                      content:
+                        "Ph&#x1ea3;i khai b&#xe1;o &#x111;&#x1ea7;u BEGIN",
+                      children: [],
+                      payload: { tag: "li", lines: "82,84" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "79,80" },
+                },
+                {
+                  content: "G&#xe1;n gi&#xe1; tr&#x1ecb; cho bi&#x1ebf;n",
+                  children: [
+                    {
+                      content: "SET",
+                      children: [],
+                      payload: { tag: "li", lines: "85,86" },
+                    },
+                    {
+                      content: "SELECT ... INTO",
+                      children: [],
+                      payload: { tag: "li", lines: "86,88" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "84,85" },
+                },
+                {
+                  content: "C&#x1ea5;u tr&#xfa;c IF - ELSE",
+                  children: [
+                    {
+                      content: "Ra quy&#x1ebf;t &#x111;&#x1ecb;nh logic",
+                      children: [],
+                      payload: { tag: "li", lines: "89,90" },
+                    },
+                    {
+                      content: "IF ... THEN",
+                      children: [],
+                      payload: { tag: "li", lines: "90,91" },
+                    },
+                    {
+                      content: "ELSEIF",
+                      children: [],
+                      payload: { tag: "li", lines: "91,92" },
+                    },
+                    {
+                      content: "ELSE",
+                      children: [],
+                      payload: { tag: "li", lines: "92,93" },
+                    },
+                    {
+                      content: "END IF",
+                      children: [],
+                      payload: { tag: "li", lines: "93,95" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "88,89" },
+                },
+                {
+                  content: "V&#xed; d&#x1ee5; t&#x1ed5;ng h&#x1ee3;p",
+                  children: [
+                    {
+                      content: "Th&#x1ee7; t&#x1ee5;c XepLoaiHocLuc",
+                      children: [],
+                      payload: { tag: "li", lines: "96,97" },
+                    },
+                    {
+                      content: "IN: &#x111;i&#x1ec3;m",
+                      children: [],
+                      payload: { tag: "li", lines: "97,98" },
+                    },
+                    {
+                      content: "OUT: x&#x1ebf;p lo&#x1ea1;i",
+                      children: [],
+                      payload: { tag: "li", lines: "98,99" },
+                    },
+                    {
+                      content: "Logic &#x111;i&#x1ec1;u ki&#x1ec7;n",
+                      children: [],
+                      payload: { tag: "li", lines: "99,101" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "95,96" },
+                },
+                {
+                  content: "T&#x1ed5;ng k&#x1ebf;t tham s&#x1ed1;",
+                  children: [
+                    {
+                      content: "IN: Ngo&#xe0;i &#x2192; Trong",
+                      children: [],
+                      payload: { tag: "li", lines: "102,103" },
+                    },
+                    {
+                      content: "OUT: Trong &#x2192; Ngo&#xe0;i",
+                      children: [],
+                      payload: { tag: "li", lines: "103,104" },
+                    },
+                    {
+                      content: "INOUT: Hai chi&#x1ec1;u",
+                      children: [],
+                      payload: { tag: "li", lines: "104,105" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "101,102" },
+                },
+              ],
+              payload: { tag: "h2", lines: "51,52" },
+            },
+          ],
+          payload: { tag: "h1", lines: "0,1" },
+        },
+        null,
+      );
+    </script>
+  </body>
+</html>

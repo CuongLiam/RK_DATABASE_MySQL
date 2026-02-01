@@ -25,7 +25,7 @@ WHERE student_id = 2;
 
 -- Xóa một sinh viên đã nhập nhầm
 DELETE Student
-FROM student_id = 5;
+WHERE student_id = 5;
 
 
 -- Kiểm tra lại dữ liệu bằng SELECT
